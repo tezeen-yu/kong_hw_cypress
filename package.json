@@ -1,0 +1,29 @@
+{
+  "name": "kong_hw_cypress",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:e2e": "cypress run",
+    "cy:open": "cypress open --env enableDocker=false --config viewportWidth=1280,viewportHeight=800",
+    "e2e:chrome": "cypress run --browser chrome",
+    "debug": "npx cypress run --env enableDocker=false --headed --browser chrome --config viewportWidth=1280,viewportHeight=800",
+    "runService": "npx cypress run --env enableDocker=false run --spec ./cypress/e2e/gatewayServicePageTest.cy.ts",
+    "runRoute": "npx cypress run --env enableDocker=false run --spec ./cypress/e2e/routesPageTest.cy.ts",
+    "allure:report": "allure generate allure-results --clean -o allure-report",
+    "allure:open": "allure open allure-report",
+    "test:ci": "npm run test:e2e && npm run allure:report"
+  },
+  "keywords": [],
+  "author": "Dan Yu",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.34.0",
+    "cypress": "^14.4.0",
+    "mocha": "^11.5.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

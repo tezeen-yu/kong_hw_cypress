@@ -1,0 +1,26 @@
+[
+  {
+    "serviceName": "service_preTestData1",
+    "tags": "tag1, tag2",
+    "url": "https://docs.konghq.com/gateway/latest/",
+    "advancedFields": {
+      "retries": 1
+    }
+  },
+  {
+    "serviceName": "service_preTestData2",
+    "tags": "tag1, tag2",
+    "url": "https://docs.konghq.com/gateway/latest/",
+    "advancedFields": {
+      "retries": 2
+    }
+  },
+  {
+    "serviceName": "service_preTestData3",
+    "tags": "tag1, tag2",
+    "url": "https://docs.konghq.com/gateway/latest/",
+    "advancedFields": {
+      "retries": 3
+    }
+  }
+]
