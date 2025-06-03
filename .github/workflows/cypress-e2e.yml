@@ -1,0 +1,49 @@
+name: Run Cypress E2E Tests For Kong
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cypress-run:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        run: npm run test:ci
+
+      - name: Generate Allure Report
+        run: npm run allure:report
+
+      - name: Upload JUnit Report (Test Summary)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: junit-report
+          path: reports/
+          
+      - name: Upload Allure Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results/
+
+      - name: Upload Allure Report (HTML)
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report/
