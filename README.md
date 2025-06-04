@@ -23,7 +23,16 @@ This project provides Cypress-based E2E tests for validating the Kong Manager UI
 ## Project Structure
 
 - `cypress/` - Cypress tests, page objects, utilities, and fixtures
-- `reports/` - Test result reports (JUnit XML, Allure, etc.)
+   - `e2e/`  
+     End-to-end (E2E) test specifications for Kong Manager UI and API.
+   - `fixtures/`  
+     Static test data (JSON, CSV, etc.) used by tests.
+   - `support/`  
+      - Custom commands, utilities, and Cypress tests.
+      - `pages/` 
+        Page Object Model (POM) files for reusable UI interactions.
+   - `utils/`
+     Utility functions and helpers for tests.
 - `docker-compose.yml` - Docker Compose file for local Kong environment
 - `.github/workflows/` - GitHub Actions CI configuration
 
