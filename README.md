@@ -22,6 +22,7 @@ This project provides Cypress-based E2E tests for validating the Kong Manager UI
 
 ## Project Structure
 
+- `const/` - Constants used in tests
 - `cypress/` - Cypress tests, page objects, utilities, and fixtures
    - `e2e/`  
      End-to-end (E2E) test specifications for Kong Manager UI and API.
